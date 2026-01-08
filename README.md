@@ -30,8 +30,8 @@ Users can:
 
 ### Links
 
-- Solution URL: [Solution URL - Github](https://github.com/WesSno/Newsletter-Sign-Up-with-Success-Message)
-- Live Site URL: [Live Site - Netlify](https://kbk-newsletter-signup.netlify.app/)
+- Solution URL: [Github](https://github.com/WesSno/Newsletter-Sign-Up-with-Success-Message)
+- Live Site URL: [Netlify](https://kbk-newsletter-signup.netlify.app/)
 
 ## My process
 
@@ -59,4 +59,4 @@ Users can:
 
 ## Acknowledgments
 
-- Frontend Mentor [Frontend Mentor](https://www.frontendmentor.io) for the project challenge
+- [Frontend Mentor](https://www.frontendmentor.io) for the project challenge
