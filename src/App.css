@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-family: "Roboto", sans-serif;
+
+  /**************** PRIMARY COLORS ****************/
+
+  --red: hsl(4, 100%, 67%);
+
+  /*************** NEUTRAL COLORS ***************/
+
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-800);
+  flex-direction: column;
+  color: var(--blue-800);
+}
+
+.sign-up-card {
+  background-color: var(--white);
+  padding-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.illustration-image {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.illustration-image img {
+  width: 100%;
+}
+
+.text-section {
+  display: grid;
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.checked-items {
+  display: grid;
+  gap: 15px;
+}
+
+.checkbox {
+  position: relative;
+  font-weight: 500;
+  color: var(--blue-700);
+  width: 100%;
+  padding-left: 30px;
+}
+
+.checkbox input {
+  position: absolute;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+
+.check {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: 1px solid var(--blue-800);
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+
+.checkbox input:checked ~ .check {
+  background: linear-gradient(to right, hsl(336, 100%, 67%), var(--red));
+  border-color: transparent;
+}
+
+.check::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  border: 1px solid var(--white);
+  border-width: 0 2px 2px 0;
+  top: 3px;
+  left: 6px;
+  transform: rotate(45deg);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/************ FORM STYLES **************/
+#email-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+#email-form label {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  font-weight: 500;
+  color: var(--blue-700);
+}
+
+#email-form input {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+  margin-bottom: 10px;
+}
+
+#email-form input::placeholder {
+  font-family: var(--font-family);
+  color: var(--grey);
+  font-weight: 500;
+}
+
+#email-form input:focus {
+  outline: none;
+  border-color: var(--blue-800);
+}
+
+.error-message {
+  grid-column: 2 / -1;
+  grid-row: 1;
+  justify-self: end;
+  color: var(--red);
+}
+
+.subscribe-btn {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+button {
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(
+    270deg,
+    hsl(234, 29%, 20%),
+    hsl(235, 18%, 26%),
+    hsl(336, 100%, 67%),
+    var(--red)
+  );
+  background-size: 800% 800%;
+  animation: gradientShift 8s ease infinite;
+  color: var(--white);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 100%;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/********* SUCCESS PAGE STYLES ***********/
+
+.success-message {
+  display: grid;
+  grid-template-rows: 100px 110px 120px 100px 100px 140px 60px;
+  justify-content: center;
+  background-color: var(--white);
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.success-message img {
+  grid-row: 2;
+  width: auto;
+}
+
+.success-message h1 {
+  grid-row: 3;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  grid-row: 4;
+  line-height: 1.6rem;
+}
+
+.success-message span {
+  font-weight: 700;
+}
+
+.success-message .dismiss-button {
+  grid-row: 7;
+  padding: 0;
+  transition: 0.2s ease;
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .App {
+    justify-content: center;
+  }
+
+  .sign-up-card {
+    padding-bottom: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .illustration-image {
+    width: auto;
+  }
+
+  .success-message {
+    grid-template-rows: 100px 110px 120px 60px;
+    padding: 40px;
+    gap: 10px;
+  }
+
+  .success-message img {
+    grid-row: 1;
+  }
+
+  .success-message h1 {
+    grid-row: 2;
+  }
+
+  .success-message p {
+    grid-row: 3;
+  }
+
+  .success-message .dismiss-button {
+    grid-row: 4;
+  }
+}
