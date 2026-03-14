@@ -31,7 +31,7 @@ function App() {
         <SuccessMsg email={email} onDismiss={handleDismiss} />
       ) : (
         <SignUpCard
-          emai={email}
+          email={email}
           setEmail={setEmail}
           error={error}
           onSubmit={handleSubmit}
